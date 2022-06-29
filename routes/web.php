@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\MentorController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -31,20 +32,20 @@ Route::group(['prefix'=>'backend'],function(){
         Route::post('logout',[AuthController::class,'signOut'])->name('logout');
         Route::view('/dashboard', 'backend.dashboard')->name('dashboard');
 
-        Route::as('language.')->prefix('language/')->group(function(){
-            Route::get('/', [LanguageController::class, 'index'])->name('index');
+        Route::as('mentor.')->prefix('mentor/')->group(function(){
+            Route::get('/', [MentorController::class, 'index'])->name('index');
 
-            Route::get('create', [LanguageController::class, 'create'])->name('create');
+            Route::get('create', [MentorController::class, 'create'])->name('create');
 
-            Route::post('store', [LanguageController::class, 'store'])->name('store');
+            Route::post('store', [MentorController::class, 'store'])->name('store');
 
-            Route::get('edit/{language}',[LanguageController::class, 'edit'])->name('edit');
+            Route::get('edit/{mentor}',[MentorController::class, 'edit'])->name('edit');
 
-            Route::post('update/{language}', [LanguageController::class, 'update'])->name('update');
+            Route::post('update/{mentor}', [MentorController::class, 'update'])->name('update');
 
-            Route::get('destroy/{language}', [LanguageController::class, 'destroy'])->name('destroy');
+            Route::get('destroy/{mentor}', [MentorController::class, 'destroy'])->name('destroy');
 
-            Route::get('status', [LanguageController::class, 'status'])->name('status');
+            Route::get('status', [MentorController::class, 'status'])->name('status');
 
         });
     });    
