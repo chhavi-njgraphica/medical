@@ -4,9 +4,9 @@
       <meta charset="UTF-8">
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       <meta http-equiv="X-UA-Compatible" content="ie=edge">
-      <meta name="description" content="Responsive HTML Admin Dashboard Template based on Bootstrap 5">
+      <meta name="description" content="Responsive HTML backend Dashboard Template based on Bootstrap 5">
       <meta name="author" content="NobleUI">
-      <meta name="keywords" content="nobleui, bootstrap, bootstrap 5, bootstrap5, admin, dashboard, template, responsive, css, sass, html, theme, front-end, ui kit, web">
+      <meta name="keywords" content="nobleui, bootstrap, bootstrap 5, bootstrap5, backend, dashboard, template, responsive, css, sass, html, theme, front-end, ui kit, web">
       <title>@yield('title')</title>
       @yield('css')
       <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap" rel="stylesheet">
@@ -97,8 +97,8 @@
                                  <img class="wd-80 ht-80 rounded-circle" src="https://via.placeholder.com/80x80" alt="">
                               </div>
                               <div class="text-center">
-                                 <p class="tx-16 fw-bolder">test</p>
-                                 <p class="tx-12 text-muted">test</p>
+                                 <p class="tx-16 fw-bolder">{{Auth::user()->name}}</p>
+                                 <p class="tx-12 text-muted">{{Auth::user()->email}}</p>
                               </div>
                            </div>
                            <ul class="list-unstyled p-1">
