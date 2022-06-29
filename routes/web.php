@@ -19,7 +19,7 @@ Route::get('/', function () {
 
 Route::group(['middleware' => 'guest'],function(){
     Route::view('login','backend.auth.login')->name('login');
-    Route::post('login',[AuthController::class,'Login'])->name('login.post');
+    Route::post('login',[AuthController::class,'login'])->name('login.post');
 });
 
 Route::group(['prefix'=>'backend'],function(){
@@ -28,7 +28,7 @@ Route::group(['prefix'=>'backend'],function(){
 
         Route::post('update-password',[AuthController::class,'changePassword'])->name('update-password');
 
-        Route::get('logout',[AuthController::class,'signOut'])->name('logout');
+        Route::post('logout',[AuthController::class,'signOut'])->name('logout');
         Route::view('/dashboard', 'backend.dashboard')->name('dashboard');
 
         Route::as('language.')->prefix('language/')->group(function(){

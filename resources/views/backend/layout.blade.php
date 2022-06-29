@@ -109,7 +109,7 @@
                                  </a>
                               </li>
                               <li class="dropdown-item py-2">
-                                 <a href="logout"
+                                 <a href="{{ route('logout') }}"
                                  onclick="event.preventDefault();
                                                document.getElementById('logout-form').submit();" class="text-body ms-0">
                                  <i class="me-2 icon-md" data-feather="log-out"></i>
@@ -122,7 +122,7 @@
                   </ul>
                </div>
             </nav>
-            <form id="logout-form" action="logout" method="POST" class="d-none">
+            <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
                @csrf
            </form>
             <!-- partial -->
